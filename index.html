@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="鹈鹕测试 - 鹈鹕骑自行车 SVG 渲染" />
+    <title>鹈鹕测试 — Pelican on a Bicycle</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+          'Microsoft YaHei', sans-serif;
+        background: #f0f4f8;
+        color: #1a202c;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.5rem;
+      }
+
+      header p {
+        color: #718096;
+        font-size: 1rem;
+      }
+
+      .svg-container {
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        padding: 2rem;
+        max-width: 720px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .svg-container svg {
+        width: 100%;
+        height: auto;
+        max-height: 480px;
+      }
+
+      footer {
+        margin-top: 2rem;
+        text-align: center;
+        color: #a0aec0;
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 600px) {
+        header h1 { font-size: 1.5rem; }
+        .svg-container { padding: 1rem; border-radius: 12px; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>🚲 鹈鹕测试</h1>
+      <p>让语言模型生成「鹈鹕骑自行车」的 SVG，再观察渲染效果</p>
+    </header>
+
+    <div class="svg-container">
+      <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- 地面 -->
+        <line x1="40" y1="420" x2="760" y2="420" stroke="#cbd5e0" stroke-width="3" stroke-dasharray="8,6"/>
+
+        <!-- ===== 自行车 ===== -->
+        <!-- 后轮 -->
+        <circle cx="240" cy="370" r="55" fill="none" stroke="#4a5568" stroke-width="5"/>
+        <circle cx="240" cy="370" r="8" fill="#4a5568"/>
+        <!-- 后轮辐条 -->
+        <line x1="240" y1="315" x2="240" y2="425" stroke="#718096" stroke-width="2"/>
+        <line x1="185" y1="370" x2="295" y2="370" stroke="#718096" stroke-width="2"/>
+        <line x1="201" y1="331" x2="279" y2="409" stroke="#718096" stroke-width="1.5"/>
+        <line x1="279" y1="331" x2="201" y2="409" stroke="#718096" stroke-width="1.5"/>
+
+        <!-- 前轮 -->
+        <circle cx="540" cy="370" r="55" fill="none" stroke="#4a5568" stroke-width="5"/>
+        <circle cx="540" cy="370" r="8" fill="#4a5568"/>
+        <!-- 前轮辐条 -->
+        <line x1="540" y1="315" x2="540" y2="425" stroke="#718096" stroke-width="2"/>
+        <line x1="485" y1="370" x2="595" y2="370" stroke="#718096" stroke-width="2"/>
+        <line x1="501" y1="331" x2="579" y2="409" stroke="#718096" stroke-width="1.5"/>
+        <line x1="579" y1="331" x2="501" y2="409" stroke="#718096" stroke-width="1.5"/>
+
+        <!-- 车架 - 下管 -->
+        <line x1="240" y1="370" x2="370" y2="310" stroke="#e53e3e" stroke-width="6" stroke-linecap="round"/>
+        <!-- 车架 - 座管 -->
+        <line x1="310" y1="370" x2="340" y2="290" stroke="#e53e3e" stroke-width="6" stroke-linecap="round"/>
+        <!-- 车架 - 上管 -->
+        <line x1="340" y1="290" x2="460" y2="290" stroke="#e53e3e" stroke-width="6" stroke-linecap="round"/>
+        <!-- 车架 - 头管 -->
+        <line x1="460" y1="290" x2="520" y2="340" stroke="#e53e3e" stroke-width="6" stroke-linecap="round"/>
+        <!-- 车架 - 前叉 -->
+        <line x1="520" y1="340" x2="540" y2="370" stroke="#e53e3e" stroke-width="5" stroke-linecap="round"/>
+
+        <!-- 座垫 -->
+        <ellipse cx="330" cy="282" rx="28" ry="8" fill="#2d3748"/>
+        <!-- 车把 -->
+        <line x1="490" y1="280" x2="530" y2="275" stroke="#4a5568" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="490" cy="280" r="5" fill="#4a5568"/>
+        <circle cx="530" cy="275" r="5" fill="#4a5568"/>
+
+        <!-- 踏板 / 曲柄 -->
+        <line x1="370" y1="310" x2="355" y2="345" stroke="#4a5568" stroke-width="4" stroke-linecap="round"/>
+        <line x1="370" y1="310" x2="385" y2="275" stroke="#4a5568" stroke-width="4" stroke-linecap="round"/>
+        <!-- 踏板 -->
+        <rect x="345" y="342" width="22" height="8" rx="3" fill="#718096"/>
+        <rect x="375" y="272" width="22" height="8" rx="3" fill="#718096"/>
+
+        <!-- 链条示意 -->
+        <ellipse cx="370" cy="310" rx="14" ry="14" fill="none" stroke="#718096" stroke-width="2"/>
+
+        <!-- ===== 鹈鹕 ===== -->
+
+        <!-- 身体 -->
+        <ellipse cx="370" cy="230" rx="55" ry="40" fill="#f7f1e3"/>
+
+        <!-- 尾巴 -->
+        <path d="M 320 240 Q 290 230 285 250 Q 300 255 320 248 Z" fill="#e8dcc8"/>
+
+        <!-- 脖子 -->
+        <path d="M 395 210 Q 420 180 430 160 Q 435 145 430 135"
+              stroke="#f7f1e3" stroke-width="22" fill="none" stroke-linecap="round"/>
+
+        <!-- 头 -->
+        <circle cx="435" cy="130" r="22" fill="#f7f1e3"/>
+
+        <!-- 眼睛 -->
+        <circle cx="442" cy="124" r="5" fill="#2d3748"/>
+        <circle cx="444" cy="122" r="2" fill="#ffffff"/>
+
+        <!-- 喙 - 上喙 -->
+        <path d="M 452 132 L 510 128 L 508 135 L 455 138 Z" fill="#f6ad55"/>
+        <!-- 喙 - 下喙 / 喉囊 -->
+        <path d="M 455 138 Q 475 165 505 135" fill="#ed8936" opacity="0.75"/>
+        <!-- 喙尖钩 -->
+        <path d="M 508 128 Q 514 130 510 136" fill="#dd6b20"/>
+
+        <!-- 翅膀 -->
+        <path d="M 350 215 Q 370 195 400 210 Q 390 240 360 240 Z" fill="#e8dcc8" stroke="#d4c5a9" stroke-width="1"/>
+        <!-- 翅膀羽毛细节 -->
+        <path d="M 360 210 Q 375 205 390 215" fill="none" stroke="#d4c5a9" stroke-width="1"/>
+        <path d="M 358 218 Q 373 213 388 222" fill="none" stroke="#d4c5a9" stroke-width="1"/>
+
+        <!-- 腿 - 左（踩在踏板上） -->
+        <line x1="360" y1="265" x2="355" y2="342" stroke="#f6ad55" stroke-width="5" stroke-linecap="round"/>
+        <!-- 脚 - 左 -->
+        <path d="M 345 342 L 365 342" stroke="#f6ad55" stroke-width="4" stroke-linecap="round"/>
+
+        <!-- 腿 - 右（在另一侧踏板） -->
+        <line x1="380" y1="265" x2="385" y2="272" stroke="#ed8936" stroke-width="5" stroke-linecap="round"/>
+        <!-- 脚 - 右 -->
+        <path d="M 375 272 L 397 272" stroke="#ed8936" stroke-width="4" stroke-linecap="round"/>
+
+        <!-- ===== 动态效果线 ===== -->
+        <!-- 速度线 -->
+        <line x1="100" y1="340" x2="160" y2="340" stroke="#a0aec0" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+        <line x1="80"  y1="360" x2="150" y2="360" stroke="#a0aec0" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+        <line x1="110" y1="380" x2="170" y2="380" stroke="#a0aec0" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+
+        <!-- 小鸟 / 音符（欢乐气氛） -->
+        <text x="620" y="140" font-size="24" fill="#ed8936" opacity="0.6">♪</text>
+        <text x="660" y="120" font-size="18" fill="#f6ad55" opacity="0.5">♫</text>
+
+      </svg>
+    </div>
+
+    <footer>
+      <p>鹈鹕测试 · Pelican Test · 由语言模型生成 SVG 并渲染</p>
+    </footer>
+
+  </body>
+</html>
